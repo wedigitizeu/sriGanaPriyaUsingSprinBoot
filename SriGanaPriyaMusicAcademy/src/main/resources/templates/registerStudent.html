@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="includes/head::headFile">
+</head>
+<body class="app sidebar-mini">
+
+	<!-- Including header files Starts -->
+	<header th:replace="includes/header::headerFile"></header>
+	<!-- Including header files Ends -->
+
+	<!-- Sidebar menu Starts-->
+	<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+	<aside th:replace="includes/sidebar::sideBar"></aside>
+	<!-- Sidebar menu Starts-->
+
+
+
+
+	<main class="app-content">
+		<div th:replace="includes/headerForTitle::headerForTitles"></div>
+
+		<!-- Start designing here Starts -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tile">
+					<div class="tile-body">
+
+						<div class="row">
+							<div class="col-lg-6">
+								<form method="post" th:action="@{/saveStudentData}"
+									th:object="${student}">
+									<div class="form-group">
+										<label class="col-form-label" for="inputDefault">Student
+											Name </label> <input class="form-control" id="name" name="name"
+											type="text" th:value="${student.name}">
+									</div>
+									<div class="form-group">
+										<label class="col-form-label" for="inputDefault">Mobile
+											Number </label> <input class="form-control" id="mobileNumber"
+											name="mobileNumber" type="text"
+											th:value="${student.mobileNumber}">
+									</div>
+							</div>
+							<div class="col-lg-6">
+
+								<div class="form-group">
+									<label for="email">Email address</label> <input
+										class="form-control" id="email" type="email" name="email"
+										th:value="${student.email}" aria-describedby="emailHelp"
+										placeholder="Enter email"><small
+										class="form-text text-muted" id="emailHelp">We'll
+										never share your email with anyone else.</small>
+								</div>
+
+								<div class="form-group">
+									<label for="category">Student wants to join</label> <select
+										class="form-control" id="category" name="category"
+										th:value="${student.category}">
+										<option value="0">Please Select</option>
+										<option value="Keyboard">Keyboard</option>
+										<option value="Guitar">Guitar</option>
+										<option value="Tabla">Tabla</option>
+										<option value="Mrudanga">Mrudanga</option>
+										<option value="Light Music">Light Music</option>
+										<option value="Carnatic Music">Carnatic Music</option>
+										<option value="Violin">Violin</option>
+										<option value="Flute">Flute</option>
+										<option value="Hindustani Music">Hindustani Music</option>
+										<option value="Bharatanatyam">Bharatanatyam</option>
+									</select>
+								</div>
+								
+								<button class="btn btn-primary" type="submit">
+									<i class="fa fa-fw fa-lg fa-check-circle"></i>Save
+								</button>
+
+							</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Start designing here Ends -->
+
+
+	</main>
+
+
+
+
+	<div th:replace="includes/footer::footerSection"></div>
+
+</body>
+</html>

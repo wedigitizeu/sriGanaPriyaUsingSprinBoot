@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="includes/head::headFile">
+</head>
+<body class="app sidebar-mini">
+
+	<!-- Including header files Starts -->
+	<header th:replace="includes/header::headerFile"></header>
+	<!-- Including header files Ends -->
+
+	<!-- Sidebar menu Starts-->
+	<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+	<aside th:replace="includes/sidebar::sideBar"></aside>
+	<!-- Sidebar menu Starts-->
+
+
+
+
+	<main class="app-content">
+		<div th:replace="includes/headerForTitle::headerForTitles"></div>
+
+		<!-- Start designing here Starts -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tile">
+					<div class="tile-body">Create a beautiful dashboard</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Start designing here Ends -->
+
+
+	</main>
+
+
+
+
+	<div th:replace="includes/footer::footerSection"></div>
+
+</body>
+</html>
